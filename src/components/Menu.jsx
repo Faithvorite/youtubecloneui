@@ -18,29 +18,38 @@ import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightnessOutlined";
 import { Link } from "react-router-dom";
+import {Squash as Hamburger} from 'hamburger-react'
+import { useState } from "react";
+
 const Container = styled.div`
-  flex: 1;
-  background-color: ${({ theme }) => theme.bgLighter};
-  height: 100vh;
+position: relative;
+  background-color: none;
+  height: 1px;
   color: ${({ theme }) => theme.text};
   font-size: 14px;
   position: sticky;
   top: 0;
+  left: 0;
+  width: 30vw;
+  z-index: 99999999999999;
+  
+  
 `;
 const Wrapper = styled.div`
-  padding: 18px 26px;
-`;
-const Logo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: bold;
-  margin-bottom: 25px;
+position: absolute;
+background-color: ${({ theme }) => theme.bgLighter};
+z-index: 99999999;
+position: absolute;
+height: 100vh;
+padding-top: 50px !important;
+padding: 20px;
+  height: 100vh;
+  width: 250px;
+  position: sticky;
+  transition: all .5s ease-in-out;
+  transform: ${props => props.isOpen ? "translateX(0%)" : "translateX(-100%)" }
 `;
 
-const Img = styled.img`
-  height: 25px;
-`;
 
 const Item = styled.div`
   display: flex;
@@ -79,17 +88,49 @@ const Title = styled.h2`
   color: #aaaaaa;
   margin-bottom: 20px;
 `;
+const Logo = styled.div`
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  gap: 5px;
+  font-size: 20px;
+  margin-bottom: 25px;
+  top: 10px;
+  padding-top: 20px;
+`;
 
+const Img = styled.img`
+  height: 20px;
+`;
+
+const HamburgerItem = styled.div`
+  display: flex;
+  top: 0;
+  left: 0;
+  position: absolute;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  z-index: 999999999999999;
+ 
+`;
 const Menu = ({ darkMode, setDarkMode }) => {
+    const [isOpen, setOpen] = useState(false);
   return (
-    <Container>
-      <Wrapper>
-        <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <Container  >
+      <HamburgerItem>
+      <Hamburger className="hamburger-react" toggled={isOpen} toggle={setOpen} size={20} />
+        <Link to="/" style={{ textDecoration: "none", color: "inherit"}}>
           <Logo>
             <Img src={NewTube} />
             NewTube
           </Logo>
         </Link>
+        </HamburgerItem>
+        
+      <Wrapper isOpen={isOpen}>
         <Item>
           <HomeIcon />
           Home

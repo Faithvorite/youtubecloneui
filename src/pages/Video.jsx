@@ -10,16 +10,24 @@ import Card from "../components/Card";
 const Container = styled.div`
   display: flex;
   gap: 24px;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
+  
 `;
 
 const Content = styled.div`
-  flex: 5;
+  flex: 4;
 `;
-const VideoWrapper = styled.div``;
+const VideoWrapper = styled.div`
+height: 70vh;
+padding: 20px;
+`;
 
 const Title = styled.h1`
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
   margin-top: 20px;
   margin-bottom: 10px;
   color: ${({ theme }) => theme.text};
@@ -42,6 +50,8 @@ const Buttons = styled.div`
 `;
 
 const Button = styled.div`
+padding: 10px 20px;
+width: 5%;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -50,11 +60,15 @@ const Button = styled.div`
 
 const Hr = styled.hr`
   margin: 15px 0px;
-  border: 0.5px solid ${({ theme }) => theme.soft};
+  border: 1px solid ${({ theme }) => theme.soft};
 `;
 
 const Recommendation = styled.div`
   flex: 2;
+  padding: 20px;
+  @media (max-width: 900px) {
+    width: 90vw;
+  }
 `;
 const Channel = styled.div`
   display: flex;
@@ -62,6 +76,7 @@ const Channel = styled.div`
 `;
 
 const ChannelInfo = styled.div`
+padding: 10px 20px;
   display: flex;
   gap: 20px;
 `;
@@ -103,6 +118,8 @@ const Subscribe = styled.button`
   padding: 10px 20px;
   cursor: pointer;
 `;
+const DescriptionBox = styled.div`
+padding: 0px 20px;`
 
 const Video = () => {
   return (
@@ -111,17 +128,27 @@ const Video = () => {
         <VideoWrapper>
           <iframe
             width="100%"
-            height="720"
-            src="https://www.youtube.com/embed/k3Vfj-e1Ma4"
+            height="100%"
+            src="https://www.youtube.com/embed/eNUpTV9BGac"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
         </VideoWrapper>
+        <DescriptionBox>
+
         <Title>Test Video</Title>
         <Details>
           <Info>7,948,154 views • Jun 22, 2022</Info>
+              </Details>
+          <Description>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Doloribus laborum delectus unde quaerat dolore culpa sit aliquam
+                at. Vitae facere ipsum totam ratione exercitationem. Suscipit
+                animi accusantium dolores ipsam ut.
+              </Description>
+              </DescriptionBox>
           <Buttons>
             <Button>
               <ThumbUpOutlinedIcon /> 123
@@ -136,23 +163,19 @@ const Video = () => {
               <AddTaskOutlinedIcon /> Save
             </Button>
           </Buttons>
-        </Details>
+        
+       
         <Hr />
         <Channel>
           <ChannelInfo>
-            <Image src="https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo" />
+            <Image src="https://i.stack.imgur.com/dr5qp.jpg" />
             <ChannelDetail>
               <ChannelName>F N</ChannelName>
               <ChannelCounter>200K subscribers</ChannelCounter>
-              <Description>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Doloribus laborum delectus unde quaerat dolore culpa sit aliquam
-                at. Vitae facere ipsum totam ratione exercitationem. Suscipit
-                animi accusantium dolores ipsam ut.
-              </Description>
+              
             </ChannelDetail>
-          </ChannelInfo>
           <Subscribe>SUBSCRIBE</Subscribe>
+          </ChannelInfo>
         </Channel>
         <Hr />
         <Comments/>

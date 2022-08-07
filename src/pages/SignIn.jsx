@@ -2,11 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
+width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: calc(100vh - 56px);
+  padding-top: 50px;
+  height: 120vh;
+ 
   color: ${({ theme }) => theme.text};
 `;
 
@@ -68,7 +70,7 @@ const SignIn = () => {
     <Container>
       <Wrapper>
         <Title>Sign in</Title>
-        <SubTitle>to continue to NewTube</SubTitle>
+        <SubTitle>to continue to LamaTube</SubTitle>
         <Input placeholder="username" />
         <Input type="password" placeholder="password" />
         <Button>Sign in</Button>

@@ -10,25 +10,29 @@ import SignIn from "./pages/SignIn";
 
 const Container = styled.div`
   display: flex;
+ width: 100vw;
+  
 `;
 
 const Main = styled.div`
-  flex: 7;
+
   background-color: ${({ theme }) => theme.bg};
+  
 `;
 const Wrapper = styled.div`
-  padding: 22px 96px;
+  padding: 0px 20px 20px 20px;
 `;
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container>
         <BrowserRouter>
-          <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
+          
           <Main>
+          <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
             <Navbar />
             <Wrapper>
               <Routes>

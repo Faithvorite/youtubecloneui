@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
+import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
+import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 
 const Container = styled.div`
   display: flex;
@@ -35,10 +38,27 @@ const Text = styled.span`
   font-size: 14px;
 `;
 
+const Buttons = styled.div`
+  display: flex;
+  gap: 20px;
+  color: ${({ theme }) => theme.text};
+  font-size: 12px;
+`;
+
+const Button = styled.div`
+padding: 10px 20px;
+height: 2px;
+width: 5%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+`;
+
 const Comment = () => {
   return (
     <Container>
-      <Avatar src="https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo" />
+      <Avatar src="https://i.stack.imgur.com/dr5qp.jpg" />
       <Details>
         <Name>
           John Doe <Date>1 day ago</Date>
@@ -49,6 +69,17 @@ const Comment = () => {
           tempore reiciendis quod, optio ullam cumque? Quidem numquam sint
           mollitia totam reiciendis?
         </Text>
+      <Buttons>
+            <Button>
+              <ThumbUpOutlinedIcon fontSize="inherit" /> 123
+            </Button>
+            <Button>
+              <ThumbDownOffAltOutlinedIcon fontSize="inherit" /> Dislike
+            </Button>
+            <Button>
+              <ReplyOutlinedIcon fontSize="inherit"/> Reply
+            </Button>
+          </Buttons>
       </Details>
     </Container>
   );

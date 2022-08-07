@@ -6,6 +6,8 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding: 25px;
+  align-items: center;
 `;
 
 const Home = () => {

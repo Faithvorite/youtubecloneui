@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import Comment from "./Comment";
 
-const Container = styled.div``;
+const Container = styled.div`
+padding: 20px;
+`;
 
 const NewComment = styled.div`
   display: flex;
@@ -24,13 +26,15 @@ const Input = styled.input`
   outline: none;
   padding: 5px;
   width: 100%;
+  font-size: 15px;
 `;
+
 
 const Comments = () => {
   return (
     <Container>
       <NewComment>
-        <Avatar src="https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo" />
+        <Avatar src="https://i.stack.imgur.com/dr5qp.jpg" />
         <Input placeholder="Add a comment..." />
       </NewComment>
       <Comment/>
