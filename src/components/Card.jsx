@@ -82,7 +82,7 @@ const Card = ({ type }) => {
             <MoreVertIcon />
             </Header>
             <ChannelName>F N</ChannelName>
-            <Info>660,908 views • 1 day ago</Info>
+            <Info>660,909 views • 1 day ago</Info>
           </Texts>
         </Details>
       </Container>
