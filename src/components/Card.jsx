@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import thumbnail from "../img/waterfallvideothumbnail.jpg"
-
-
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import Profile from "../img/profile.jpg"
 
 const Container = styled.div`
   width: ${(props) => props.type !== "sm" && "360px"};
@@ -38,6 +38,7 @@ const ChannelImage = styled.img`
 const Texts = styled.div``;
 
 const Title = styled.h1`
+width: 100%;
   font-size: 16px;
   font-weight: 500;
   color: ${({ theme }) => theme.text};
@@ -53,6 +54,14 @@ const Info = styled.div`
   font-size: 14px;
   color: ${({ theme }) => theme.textSoft};
 `;
+const Header =styled.div`
+display: flex;
+justify-content: space-between;
+color:  ${({ theme }) => theme.text};
+`
+const Dots = styled.div`
+right: 0;
+`
 
 const Card = ({ type }) => {
   return (
@@ -65,10 +74,13 @@ const Card = ({ type }) => {
         <Details type={type}>
           <ChannelImage
             type={type}
-            src="https://i.stack.imgur.com/dr5qp.jpg"
+            src={Profile}
           />
           <Texts>
+            <Header>
             <Title>Test Video</Title>
+            <MoreVertIcon />
+            </Header>
             <ChannelName>F N</ChannelName>
             <Info>660,908 views • 1 day ago</Info>
           </Texts>

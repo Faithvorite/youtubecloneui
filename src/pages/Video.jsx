@@ -6,10 +6,11 @@ import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import AddTaskOutlinedIcon from "@mui/icons-material/AddTaskOutlined";
 import Comments from "../components/Comments";
 import Card from "../components/Card";
-
+import Profile from "../img/profile.jpg"
 const Container = styled.div`
   display: flex;
   gap: 24px;
+  background-color: ${({ theme }) => theme.bg};
   @media (max-width: 900px) {
     flex-direction: column;
   }
@@ -37,6 +38,7 @@ const Details = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
 `;
 
 const Info = styled.span`
@@ -44,6 +46,7 @@ const Info = styled.span`
 `;
 
 const Buttons = styled.div`
+padding: 5px 0px;
   display: flex;
   gap: 20px;
   color: ${({ theme }) => theme.text};
@@ -59,8 +62,8 @@ width: 5%;
 `;
 
 const Hr = styled.hr`
-  margin: 15px 0px;
-  border: 1px solid ${({ theme }) => theme.soft};
+  margin: 0px;
+  border: .5px solid ${({ theme }) => theme.soft};
 `;
 
 const Recommendation = styled.div`
@@ -71,19 +74,26 @@ const Recommendation = styled.div`
   }
 `;
 const Channel = styled.div`
+margin-left: 20px;
+width: 90%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  border: .5px solid ${({ theme }) => theme.soft};
+  padding: 0px 5px;
+  
 `;
 
 const ChannelInfo = styled.div`
-padding: 10px 20px;
+padding: 5px 20px;
   display: flex;
   gap: 20px;
+  
 `;
 
 const Image = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 `;
 
@@ -99,12 +109,13 @@ const ChannelName = styled.span`
 
 const ChannelCounter = styled.span`
   margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: ${({ theme }) => theme.textSoft};
   font-size: 12px;
 `;
 
 const Description = styled.p`
+color:  ${({ theme }) => theme.text};
   font-size: 14px;
 `;
 
@@ -165,19 +176,19 @@ const Video = () => {
           </Buttons>
         
        
-        <Hr />
+        {/* <Hr /> */}
         <Channel>
           <ChannelInfo>
-            <Image src="https://i.stack.imgur.com/dr5qp.jpg" />
+            <Image src={Profile} />
             <ChannelDetail>
               <ChannelName>F N</ChannelName>
               <ChannelCounter>200K subscribers</ChannelCounter>
               
             </ChannelDetail>
-          <Subscribe>SUBSCRIBE</Subscribe>
           </ChannelInfo>
+          <Subscribe>SUBSCRIBE</Subscribe>
         </Channel>
-        <Hr />
+        {/* <Hr /> */}
         <Comments/>
       </Content>
       <Recommendation>

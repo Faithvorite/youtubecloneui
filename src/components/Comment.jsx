@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
-
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 const Container = styled.div`
   display: flex;
   gap: 10px;
@@ -11,8 +11,8 @@ const Container = styled.div`
 `;
 
 const Avatar = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 `;
 
@@ -40,9 +40,9 @@ const Text = styled.span`
 
 const Buttons = styled.div`
   display: flex;
-  gap: 20px;
-  color: ${({ theme }) => theme.text};
-  font-size: 12px;
+  gap: 5px;
+  color: ${({ theme }) => theme.textSoft};
+  font-size: 15px;
 `;
 
 const Button = styled.div`
@@ -54,6 +54,15 @@ width: 5%;
   gap: 5px;
   cursor: pointer;
 `;
+const View = styled.div`
+display: flex;
+color: #047dd4;
+font-size: 15px;
+font-weight: 500;
+align-items: center;
+gap: 10px;
+
+`
 
 const Comment = () => {
   return (
@@ -74,12 +83,16 @@ const Comment = () => {
               <ThumbUpOutlinedIcon fontSize="inherit" /> 123
             </Button>
             <Button>
-              <ThumbDownOffAltOutlinedIcon fontSize="inherit" /> Dislike
+              <ThumbDownOffAltOutlinedIcon fontSize="inherit" />
             </Button>
             <Button>
-              <ReplyOutlinedIcon fontSize="inherit"/> Reply
+            REPLY
             </Button>
           </Buttons>
+          <View>
+           <ArrowDropDownIcon/> View 30 replies
+
+          </View>
       </Details>
     </Container>
   );

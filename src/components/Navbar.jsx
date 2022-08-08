@@ -4,6 +4,8 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 import MicIcon from '@mui/icons-material/Mic';
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
+import ToggleOffOutlinedIcon from '@mui/icons-material/ToggleOffOutlined';
+import ToggleOnOutlinedIcon from '@mui/icons-material/ToggleOnOutlined';
 
 const Container = styled.div`
   position: sticky;
@@ -12,6 +14,7 @@ const Container = styled.div`
   height: 45px;
   color: white;
   width: 100%;
+  padding: 5px 0px;
   
 `;
 
@@ -55,8 +58,8 @@ const Button = styled.button`
   margin-left: 40px;
   height: 35px;
   background-color: transparent;
-  border: 1px solid #3ea6ff;
-  color: #3ea6ff;
+  border: 1px solid #047dd4;
+  color: #047dd4;
   border-radius: 3px;
   font-weight: 700;
  
@@ -74,21 +77,44 @@ cursor: pointer;
 display: none;
 @media (max-width: 750px) {
 display:${props => props.isSearchOpen? "none" : "flex"};
+
 `
-const Navbar = () => {
+const Toggles = styled.div`
+position: relative;
+display: flex;
+@media (max-width: 750px) {
+  display:${props => props.isSearchOpen? "none" : "flex"};`
+
+const ToggleOff = styled.div`
+position: absolute;
+display:${props => props.darkMode? "none" : "flex"};
+`;
+
+const ToggleOn = styled.div`
+opacity:${props => props.darkMode? "100%" : "0%"};`;
+
+const Navbar = ({darkMode, setDarkMode}) => {
   const [isSearchOpen, setSearchOpen] = useState(false);
 
   return (
     <Container>
       <Wrapper>
         <SearchButton isSearchOpen={isSearchOpen}>
-      <SearchOutlinedIcon  onClick={()=>{setSearchOpen(!isSearchOpen); console.log("works")}}/>
+      <SearchOutlinedIcon  onClick={()=>{setSearchOpen(!isSearchOpen)}}/>
         </SearchButton>
         <Search isSearchOpen={isSearchOpen}>
           <Input placeholder="Search" />
           <SearchOutlinedIcon onClick={()=>{setSearchOpen(!isSearchOpen)}}/>
         </Search>
-        <MicIcon style={{padding: "10px"}}/>
+        <MicIcon style={{padding: "10px", cursor: "pointer"}}/>
+        <Toggles isSearchOpen={isSearchOpen}>
+          <ToggleOn darkMode={darkMode}>
+        <ToggleOffOutlinedIcon style={{ cursor: "pointer"}} onClick={()=> {setDarkMode(!darkMode)}}/>
+          </ToggleOn>
+          <ToggleOff darkMode={darkMode}>
+        <ToggleOnOutlinedIcon style={{ cursor: "pointer"}} onClick={()=> {setDarkMode(!darkMode)}}/>
+          </ToggleOff>
+        </Toggles>
         <Link to="signin" style={{ textDecoration: "none" }}>
           <Button isSearchOpen={isSearchOpen}>
             <AccountCircleOutlinedIcon />

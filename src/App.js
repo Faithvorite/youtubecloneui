@@ -11,12 +11,13 @@ import SignIn from "./pages/SignIn";
 const Container = styled.div`
   display: flex;
  width: 100vw;
+
   
 `;
 
 const Main = styled.div`
 
-  background-color: ${({ theme }) => theme.bg};
+  background-color: ${({ theme }) => theme.bgLighter};
   
 `;
 const Wrapper = styled.div`
@@ -24,7 +25,7 @@ const Wrapper = styled.div`
 `;
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -33,7 +34,7 @@ function App() {
           
           <Main>
           <Menu darkMode={darkMode} setDarkMode={setDarkMode} />
-            <Navbar />
+            <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
             <Wrapper>
               <Routes>
                 <Route path="/">
