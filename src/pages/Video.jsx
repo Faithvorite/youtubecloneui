@@ -61,11 +61,6 @@ width: 5%;
   cursor: pointer;
 `;
 
-const Hr = styled.hr`
-  margin: 0px;
-  border: .5px solid ${({ theme }) => theme.soft};
-`;
-
 const Recommendation = styled.div`
   flex: 2;
   padding: 20px;

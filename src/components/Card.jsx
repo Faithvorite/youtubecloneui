@@ -59,10 +59,6 @@ display: flex;
 justify-content: space-between;
 color:  ${({ theme }) => theme.text};
 `
-const Dots = styled.div`
-right: 0;
-`
-
 const Card = ({ type }) => {
   return (
     <Link to="/video/test" style={{ textDecoration: "none" }}>

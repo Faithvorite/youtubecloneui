@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
-import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 const Container = styled.div`
   display: flex;
