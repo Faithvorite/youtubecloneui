@@ -65,7 +65,7 @@ const Card = ({ type }) => {
       <Container type={type}>
         <Image
           type={type}
-          src={"https://user-images.githubusercontent.com/57932015/185276054-e5072236-a90d-405c-8698-21ac58fea483.png"}
+          src={"https://user-images.githubusercontent.com/57932015/185276500-590d5ccf-d753-4fd5-82b2-8d6acb24597a.png"}
         />
         <Details type={type}>
           <ChannelImage
