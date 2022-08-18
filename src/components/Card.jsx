@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import thumbnail from "../img/waterfallvideothumbnail.jpg"
+import thumbnail from "../img/sunsetvid.jpg"
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Profile from "../img/profile.jpg"
 
